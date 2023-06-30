@@ -1,15 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { ExplorePage } from './code-stat-vault/core/Explore';
+import { Home } from './code-stat-vault/core/Home';
+import { Chats } from './code-stat-vault/core/Chats';
+import './index.css';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/chats",
+    element:
+      < Chats />
+  },
+  {
+    path: "/explore",
+    element:
+      <ExplorePage/>
+  },
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
