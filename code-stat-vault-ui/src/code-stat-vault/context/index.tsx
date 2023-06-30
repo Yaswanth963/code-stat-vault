@@ -1,6 +1,10 @@
 import { createContext } from "react";
-export const UserContext = createContext({
-    name:'',
-    email:''
-})
-
+import { User } from "../types";
+export const UserContext = createContext<User>({
+  name: "",
+  email: "",
+  isLoggedIn: false,
+  isAdminUser: false,
+  isSuperUser: false,
+  friends: [],
+});

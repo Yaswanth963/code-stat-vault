@@ -1,23 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { ExplorePage } from './code-stat-vault/core/Explore';
-import { Home } from './code-stat-vault/core/Home';
-import { Chats } from './code-stat-vault/core/Chats';
-import './index.css';
-
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { ExplorePage } from "./code-stat-vault/core/Explore";
+import { Home } from "./code-stat-vault/core/Home";
+import { Chats } from "./code-stat-vault/core/Chats";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
     path: "/chats",
-    element:
-      < Chats />
+    element: <Chats friends={[]} />,
   },
   {
     path: "/explore",
-    element:
-      <ExplorePage/>
+    element: <ExplorePage />,
   },
   {
     path: "/",
@@ -26,7 +23,7 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
